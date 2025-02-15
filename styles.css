@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222831;
+    color: #EEEEEE;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide.active .static-img {
+    opacity: 1;
+    animation: fadeInStatic 2s ease-in-out;
+}
+
+.background-anim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    animation: fadeInBg 1s ease-in-out;
+}
+
+.static-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 700px;
+    opacity: 0;
+    /* animation: fadeInStatic 2s ease-in-out 2s forwards; */
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(34, 40, 49, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1400px;
+}
+
+.slide-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #76ABAE;
+}
+
+.slide-content p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.slide-content a {
+    color: #76ABAE;
+    text-decoration: none;
+}
+
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 0%;
+    background-color: #76ABAE;
+    transition: width 0.1s linear;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #31363F;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #EEEEEE;
+    cursor: pointer;
+}
+
+.toggle-play {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #EEEEEE;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.slide-list {
+    list-style: none;
+    width: 100%;
+}
+
+.slide-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #76ABAE;
+    color: #222831;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.slide-list li:hover {
+    background-color: #5ca2a6;
+}
+
+.burger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #EEEEEE;
+    cursor: pointer;
+    z-index: 3;
+}
+
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInStatic {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

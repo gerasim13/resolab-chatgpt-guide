@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание Интерактивных Презентаций с ИИ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Прогресс-бар -->
+    <div id="progress-bar"></div>
+
+    <!-- Слайды -->
+    <div class="slides">
+        <!-- Слайд 0 -->
+        <div class="slide active" data-slide="0">
+            <img src="img/anim_00.webp" class="background-anim" alt="Анимация 00">
+            <img src="img/static_00.png" class="static-img" alt="Статичное изображение 00">
+            <div class="slide-content">
+                <h1>Добро пожаловать!</h1>
+                <p>Привет! В этой презентации мы рассмотрим, как создать интерактивную презентацию с использованием искусственного интеллекта. Учтите, что ИИ может не дать идеальный результат с первого раза, но с каждой итерацией ваш проект будет становиться лучше!</p>
+            </div>
+        </div>
+        <!-- Слайд 1 -->
+        <div class="slide" data-slide="1">
+            <img src="img/anim_01.webp" class="background-anim" alt="Анимация 01">
+            <img src="img/static_01.png" class="static-img" alt="Статичное изображение 01">
+            <div class="slide-content">
+                <h1>Определение концепции</h1>
+                <p>Перед началом работы важно четко представить, о чем будет ваша презентация и как будет подаваться информация. На этом этапе подготовьте необходимые изображения и иллюстрации. В моей презентации я использовал шейдеры с сайта <a href="https://shadertoy.com" target="_blank">shadertoy.com</a>, которые отрендерил в webp-анимации.</p>
+            </div>
+        </div>
+        <!-- Слайд 2 -->
+        <div class="slide" data-slide="2">
+            <img src="img/anim_02.webp" class="background-anim" alt="Анимация 02">
+            <img src="img/static_02.png" class="static-img" alt="Статичное изображение 02">
+            <div class="slide-content">
+                <h1>Организация изображений</h1>
+                <p>Следующим шагом является организация структуры файлов проекта. Создайте папку <code>img</code> и поместите туда все изображения и анимации. Статичные изображения должны быть в формате PNG с префиксом <code>static_</code> (например, <code>static_00.png</code>), а анимации в формате WEBP с префиксом <code>anim_</code> (например, <code>anim_00.webp</code>). Это обеспечит последовательность и упрощает доступ к ним в коде.</p>
+            </div>
+        </div>
+        <!-- Слайд 3 -->
+        <div class="slide" data-slide="3">
+            <img src="img/anim_03.webp" class="background-anim" alt="Анимация 03">
+            <img src="img/static_03.png" class="static-img" alt="Статичное изображение 03">
+            <div class="slide-content">
+                <h1>Создание промпта</h1>
+                <p>Опишите вашу презентацию и технологии, которые планируете использовать. Важно детально описать функционал и каждую кнопку. Например, я хочу создать слайд-шоу, где каждый слайд занимает весь экран, с прогресс-баром внизу, который заполняется за 10 секунд перед переключением на следующий слайд. Также необходимо предусмотреть боковую панель с управлением, анимации смены слайдов и соответствующую цветовую схему (#222831, #31363F, #76ABAE, #EEEEEE).</p>
+            </div>
+        </div>
+        <!-- Слайд 4 -->
+        <div class="slide" data-slide="4">
+            <img src="img/anim_04.webp" class="background-anim" alt="Анимация 04">
+            <img src="img/static_04.png" class="static-img" alt="Статичное изображение 04">
+            <div class="slide-content">
+                <h1>Генерация кода с ИИ</h1>
+                <p>Введите подготовленный промпт в нейросеть и ожидайте генерации кода HTML, CSS и JavaScript. Обычно я использую модель <code>o1-mini</code>, но можно экспериментировать с другими сервисами, такими как <a href="https://bolt.new" target="_blank">bolt.new</a>, который отлично подходит для генерации кода.</p>
+            </div>
+        </div>
+        <!-- Слайд 5 -->
+        <div class="slide" data-slide="5">
+            <img src="img/anim_05.webp" class="background-anim" alt="Анимация 05">
+            <img src="img/static_05.png" class="static-img" alt="Статичное изображение 05">
+            <div class="slide-content">
+                <h1>Реализация кода</h1>
+                <p>Скопируйте сгенерированный код в соответствующие файлы: HTML-код в <code>index.html</code>, CSS в <code>styles.css</code>, и JavaScript в <code>scripts.js</code>. Проверьте результат и, при необходимости, повторите предыдущие шаги для улучшения. Терпение и настойчивость помогут вам создать отличную презентацию!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Боковая панель -->
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-btn">&times;</button>
+        <ul class="slide-list">
+            <li data-slide="0">Интро</li>
+            <li data-slide="1">Концепция</li>
+            <li data-slide="2">Подготовка изображений</li>
+            <li data-slide="3">Промпт для ИИ</li>
+            <li data-slide="4">Работа с ИИ</li>
+            <li data-slide="5">Реализация кода</li>
+        </ul>
+        <button id="toggle-play" class="toggle-play">&#10074;&#10074;</button>
+    </div>
+
+    <!-- Кнопка бургера -->
+    <button id="burger" class="burger">&#9776;</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
